@@ -4,8 +4,8 @@ pipeline {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
-          sh 'mvn clean package dependency-check:aggregate
-              mvn sonar:sonar'
+          sh 'mvn clean package dependency-check:aggregate'
+          sh  'mvn sonar:sonar'
         }
       }
     }
